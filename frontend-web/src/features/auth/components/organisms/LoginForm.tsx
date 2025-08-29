@@ -12,39 +12,67 @@ const LoginForm: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const { login: loginUser } = useAuthStore();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const res = await login(id, password);
-      loginUser(res.user, res.token);
-    } catch (err: any) {
-      setError(err.message || "Login failed");
-    }
-  };
+const [loading, setLoading] = useState(false);
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+  try {
+    const res = await login(id, password);
+    loginUser(res.user, res.token);
+  } catch (err: any) {
+    setError(err.message || "Login failed");
+  } finally {
+    setLoading(false);
+  }
+};
+ 
 
   return (
-    <form onSubmit={handleSubmit} className="w-sm md:w-lg h-150 mx-auto bg-white p-6 rounded-2xl shadow">
-      <h2 className="text-xl font-bold text-center text-yellow-500 mb-6">LANDAS</h2>
-      <InputWithLabel label="아이디" name="id" value={id} onChange={(e) => setId(e.target.value)}/>
-      <PasswordField
-        label="비밀번호"
-        name="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      
-      <div className="flex items-center justify-between mb-4">
-        <Checkbox label="아이디 저장" />
-        <a href="#" className="text-sm text-gray-500 hover:text-gray-700">
-          아이디 찾기 | 비밀번호 찾기
-        </a>
-      </div>
-      
-      <Button disabled={id === "" || password === ""}  type="submit">로그인</Button>
-      <Button variant={"secondary"} className="mt-2">
-        회원가입
-      </Button>
-    </form>
+<form
+  onSubmit={handleSubmit}
+  className="w-[340px] md:w-2xl md:px-32 md:pb-48 mt-12 py-20 mx-auto bg-white p-6 rounded-2xl"
+>
+  <h2 className="text-4xl font-extrabold text-center text-yellow-400 mb-16 md:mb-22">
+    LANDAS
+  </h2>
+
+  <InputWithLabel
+    label="아이디"
+    name="id"
+    value={id}
+    onChange={(e) => setId(e.target.value)}
+    error={error && id === "" ? error : undefined}
+  />
+
+  <PasswordField
+    label="비밀번호"
+    name="password"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+    error={error && password === "" ? error : undefined}
+  />
+
+  {error && (
+    <p className="text-red-500 text-sm text-center mb-4">{error}</p>
+  )}
+
+  <div className="flex items-center justify-between mb-12">
+    <Checkbox label="아이디 저장" />
+    <a href="#" className="text-xs font-semibold">
+      아이디 찾기 | 비밀번호 찾기
+    </a>
+  </div>
+
+  <Button disabled={loading || id === "" || password === ""} type="submit">
+    {loading ? "로그인 중..." : "로그인"}
+  </Button>
+
+  <Button variant="secondary" className="mt-3">
+    회원가입
+  </Button>
+</form>
+
   );
 };
 

@@ -9,13 +9,21 @@ interface Props {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
+  placeholder?: string;
 }
 
-const PasswordField: React.FC<Props> = ({ label, name, value, onChange, error }) => {
+const PasswordField: React.FC<Props> = ({
+  label,
+  name,
+  value,
+  onChange,
+  error,
+  placeholder = "En"
+}) => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className="md:flex mb-4">
+    <div className="md:flex mb-12 md:mb-6">
       <Label htmlFor={name}>{label}</Label>
       <div className="relative w-full">
         <Input
@@ -25,14 +33,16 @@ const PasswordField: React.FC<Props> = ({ label, name, value, onChange, error })
           value={value}
           onChange={onChange}
           error={error}
-          placeholder="비밀번호를 입력해주세요."
+          placeholder={placeholder}
         />
-        <span
+        <button
+          type="button"
           onClick={() => setVisible(!visible)}
-          className="absolute right-4 top-3.5 cursor-pointer"
+          aria-label={visible ? "Hide password" : "Show password"}
+          className="absolute inset-y-0 right-3 flex items-center text-xl text-gray-600"
         >
-          {visible ? <PiEye/> : <PiEyeSlash />}
-        </span>
+          {visible ? <PiEyeSlash /> : <PiEye />}
+        </button>
       </div>
     </div>
   );

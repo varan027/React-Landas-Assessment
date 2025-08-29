@@ -9,12 +9,31 @@ interface Props {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
+  placeholder?: string;
+  required?: boolean;
 }
 
-const InputWithLabel: React.FC<Props> = ({ label, name, type = "text", value, onChange, error }) => (
-  <div className="mb-10 md:flex">
-    <Label htmlFor={name}>{label}</Label>
-    <Input id={name} name={name} type={type} value={value} onChange={onChange} error={error} placeholder="아이디를 입력해 주세요." />
+const InputWithLabel: React.FC<Props> = ({
+  label,
+  name,
+  type = "text",
+  value,
+  onChange,
+  error,
+  placeholder,
+  required
+}) => (
+  <div className="mb-6 md:flex md:items-center">
+    <Label htmlFor={name}>{label}{required && <span className="text-red-500 ml-1">*</span>}</Label>
+    <Input
+      id={name}
+      name={name}
+      type={type}
+      value={value}
+      onChange={onChange}
+      error={error}
+      placeholder={placeholder}
+    />
   </div>
 );
 

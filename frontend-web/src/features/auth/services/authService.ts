@@ -6,13 +6,3 @@ export const login = async (id: string, password: string) => {
   throw new Error("아이디 또는 비밀번호가 올바르지 않습니다.");
 };
 
-export const signup = async (payload: any) => {
-  // API call to register user
-  return { message: "User registered successfully" };
-};
-
-export const forgotPassword = async (email: string) => {
-  // API call for password reset
-  return { message: "Password reset link sent to email" };
-  
-};
