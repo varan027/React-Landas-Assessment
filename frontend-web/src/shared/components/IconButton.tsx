@@ -7,8 +7,8 @@ interface IconButtonProps {
 
 const IconButton: React.FC<IconButtonProps> = ({ icon: Icon }) => {
   return (
-    <button className="text-white hover:text-yellow-500 transition px-1 lg:px-2">
-      <Icon size={18} />
+    <button className="text-white hover:text-yellow-500 transition px-2">
+      <Icon size={22} />
     </button>
   );
 };

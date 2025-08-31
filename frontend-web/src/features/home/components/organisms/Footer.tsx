@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
 
       {/* Mobile stacked */}
       <div className="lg:hidden flex flex-col space-y-8 text-xs text-neutral-400">
-        <Logo className="text-3xl" />
+        <Logo className="text-4xl" />
 
         <div className="space-y-2">
           <h3 className="text-lg font-semibold ">대표 번호 및 AS 문의</h3>
