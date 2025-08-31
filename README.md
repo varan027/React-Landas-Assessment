@@ -64,28 +64,30 @@ src/
  ┣ App.tsx          # App entry, routes
  ┣ main.tsx         # ReactDOM entry
  ┣ index.css        # Global styles
+```
+---
 
+## 📝 Implementation Assumptions & Decisions
 
-📝 Implementation Assumptions & Decisions
+- Authentication is mocked → authService.ts simulates login with a hardcoded user.
 
-Authentication is mocked → authService.ts simulates login with a hardcoded user.
+- Evaluator credentials:
+  ```bash
+  Username: admin
+  Password: 1234
+  ```
+- Zustand with persist middleware was chosen for simplicity instead of Redux.
 
-Evaluator credentials:
+- TailwindCSS was used for responsive UI rather than writing raw CSS.
 
-Username: admin
+- Routing assumes SPA deployment with index.html fallback (404 redirect rule applied).
 
-Password: 1234
+---
 
-Zustand with persist middleware was chosen for simplicity instead of Redux.
+## 📌 Optional Libraries
 
-TailwindCSS was used for responsive UI rather than writing raw CSS.
+- Zustand → Chosen over Redux for simplicity and smaller boilerplate.
 
-Routing assumes SPA deployment with index.html fallback (404 redirect rule applied).
+- TailwindCSS → Faster development, consistent spacing, and responsive classes.
 
-📌 Justification for Optional Libraries
-
-Zustand → Chosen over Redux for simplicity and smaller boilerplate.
-
-TailwindCSS → Faster development, consistent spacing, and responsive classes.
-
-React Router v6 → Clean and modern routing system with hooks support.
+- React Router v6 → Clean and modern routing system with hooks support.
