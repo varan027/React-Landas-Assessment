@@ -1,4 +1,3 @@
-import React from "react";
 import NavLink from "../../../../shared/components/NavLink";
 
 const NavbarMenu = () => {

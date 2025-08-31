@@ -1,4 +1,3 @@
-import React from "react";
 import IconButton from "../../../../shared/components/IconButton";
 import { HiShoppingCart } from "react-icons/hi";
 import { HiMiniUser } from "react-icons/hi2";

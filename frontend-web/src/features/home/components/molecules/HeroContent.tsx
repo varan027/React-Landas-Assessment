@@ -1,4 +1,3 @@
-import React from "react";
 import HeroText from "../atoms/HeroText";
 
 const HeroContent = () => {
