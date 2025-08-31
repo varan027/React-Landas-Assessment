@@ -1,11 +1,12 @@
 import React from "react";
 import HeroContent from "../molecules/HeroContent";
+import heroImage from "../../../../../public/assets/Hero-Image.jpg";
 
 const HeroSection:React.FC = () => {
   return (
     <section className="relative h-[80vh] md:h-[100vh] bg-black w-full">
       <img
-        src="src/assets/Hero-Image.webp"
+        src={heroImage}
         alt="Hero Background"
         className="w-full h-full object-cover md:object-top opacity-90"
       />

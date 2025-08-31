@@ -1,7 +1,7 @@
 const sampleProducts = [
   {
     id: 1,
-    image: "src/assets/product-img.jpg",
+    image: "public/assets/product-img.jpg",
     title: "상품명이 노출 됩니다.상품명이 노출 됩니...",
     brand: "{브랜드명} 그룹코드-색상명",
     price: "000,000원",
@@ -10,7 +10,7 @@ const sampleProducts = [
   },
   {
     id: 2,
-    image: "src/assets/product-img.jpg",
+    image: "public/assets/product-img.jpg",
     title: "상품명이 노출 됩니다.상품명이 노출 됩니...",
     brand: "{브랜드명} 그룹코드-색상명",
     price: "000,000원",
@@ -19,7 +19,7 @@ const sampleProducts = [
   },
   {
     id: 3,
-    image: "src/assets/product-img.jpg",
+    image: "public/assets/product-img.jpg",
     title: "상품명이 노출 됩니다.상품명이 노출 됩니...",
     brand: "{브랜드명} 그룹코드-색상명",
     price: "000,000원",
@@ -28,7 +28,7 @@ const sampleProducts = [
   },
   {
     id: 4,
-    image: "src/assets/product-img.jpg",
+    image: "public/assets/product-img.jpg",
     title: "상품명이 노출 됩니다.상품명이 노출 됩니...",
     brand: "{브랜드명} 그룹코드-색상명",
     price: "000,000원",
