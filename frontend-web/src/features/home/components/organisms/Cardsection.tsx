@@ -4,7 +4,8 @@ import Card from '../molecules/Card';
 
 type CardData = {
   image: string;
-  title: string;
+  title?: string;
+  title2?: string;
   subtitle: string;
 };
 
@@ -63,7 +64,8 @@ const CardSection: React.FC<CardSectionProps> = ({ cards }) => {
             <Card
               key={index}
               image={card.image}
-              title={card.title}
+              title={card.title ?? ''}
+              title2={card.title2 ?? ''}
               subtitle={card.subtitle}
               highlighted={index === centerIndex}
               size={index === 3 ? 'large' : undefined}

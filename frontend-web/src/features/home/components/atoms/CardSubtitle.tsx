@@ -7,7 +7,7 @@ type CardSubtitleProps = {
 };
 
 const CardSubtitle: React.FC<CardSubtitleProps> = ({ children, className }) => {
-  return <p className={`text-xs font-semibold absolute bottom-10 left-6 ${className}`}>{children}</p>;
+  return <p className={`text-xs font-semibold absolute bottom-4 left-4 ${className}`}>{children}</p>;
 };
 
 export default CardSubtitle;

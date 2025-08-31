@@ -7,12 +7,13 @@ import CardSubtitle from '../atoms/CardSubtitle';
 type CardProps = {
   image: string;
   title: string;
+  title2 : string;
   subtitle: string;
   highlighted?: boolean;
   size?: 'large';
 };
 
-const Card: React.FC<CardProps> = ({ image, title, subtitle, highlighted, size }) => {
+const Card: React.FC<CardProps> = ({ image, title, title2, subtitle, highlighted, size }) => {
   return (
     <div
       className={`relative w-64 h-64 lg:h-90 lg:w-56 sm:h-80 duration-300 rounded-br-[4rem] lg:rounded-b-none 
@@ -24,7 +25,7 @@ const Card: React.FC<CardProps> = ({ image, title, subtitle, highlighted, size }
 
       <CardImage src={image} />
      
-      <CardTitle>{title}</CardTitle>
+      <CardTitle>{title} <br /> {title2}</CardTitle>
       <CardSubtitle>{subtitle}</CardSubtitle>
     </div>
   );
