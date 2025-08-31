@@ -1,3 +1,5 @@
+import productimage from '../assets/product-img.jpg'
+
 const sampleProducts = [
   {
     id: 1,

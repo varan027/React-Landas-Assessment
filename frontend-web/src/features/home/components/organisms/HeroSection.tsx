@@ -1,6 +1,6 @@
 import React from "react";
 import HeroContent from "../molecules/HeroContent";
-import heroImage from "../../../../../public/assets/Hero-Image.jpg";
+import heroImage from "../../../../assets/Hero-Image.jpg";
 
 const HeroSection:React.FC = () => {
   return (
