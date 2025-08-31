@@ -1,5 +1,5 @@
 import React from "react";
-import classNameMerge from "../../../../shared/utils/classNameMerge";
+import classNameMerge from "../utils/classNameMerge";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary";

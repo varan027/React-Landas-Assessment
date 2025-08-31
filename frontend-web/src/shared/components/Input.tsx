@@ -1,5 +1,5 @@
 import React from "react";
-import classNameMerge from "../../../../shared/utils/classNameMerge";
+import classNameMerge from "../utils/classNameMerge";
 import ErrorText from "./ErrorText";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {

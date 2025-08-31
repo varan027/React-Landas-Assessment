@@ -1,6 +1,6 @@
 import React from "react";
-import Label from "../atoms/Label";
-import Input from "../atoms/Input";
+import Label from "../../../../shared/components/Label";
+import Input from "../../../../shared/components/Input";
 
 interface Props {
   label: string;

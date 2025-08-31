@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Label from "../atoms/Label";
-import Input from "../atoms/Input";
+import Label from "../../../../shared/components/Label";
+import Input from "../../../../shared/components/Input";
 import { PiEye, PiEyeSlash } from "react-icons/pi";
 
 interface Props {
@@ -18,12 +18,12 @@ const PasswordField: React.FC<Props> = ({
   value,
   onChange,
   error,
-  placeholder = "En"
+  placeholder
 }) => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className="md:flex mb-12 md:mb-6">
+    <div className="md:flex">
       <Label htmlFor={name}>{label}</Label>
       <div className="relative w-full">
         <Input
