@@ -23,7 +23,7 @@ const PasswordField: React.FC<Props> = ({
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className="md:flex">
+    <div className="md:flex mb-4">
       <Label htmlFor={name}>{label}</Label>
       <div className="relative w-full">
         <Input

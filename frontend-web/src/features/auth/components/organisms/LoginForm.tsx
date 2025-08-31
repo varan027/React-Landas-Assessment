@@ -59,7 +59,7 @@ const LoginForm: React.FC = () => {
       />
 
       {error && (
-        <p className="text-red-500 text-xs text-center mb-6 mr-12 md:mr-5">{error}</p>
+        <p className="text-red-500 text-xs mb-8">{error}- Test ID: admin, Password: 1234</p>
       )}
 
       <div className="flex items-center justify-between mb-12 mt-12 md:mt-6">
